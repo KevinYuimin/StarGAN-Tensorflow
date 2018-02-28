@@ -34,6 +34,7 @@ parser.add_argument('--adv_type',       type=str,   default='WGAN',     help='GA
 parser.add_argument('--binary_attrs',   type=str,   default='100000')
 parser.add_argument('--d_steps',        type=int,   default=5)
 parser.add_argument('--c_method',       type=str,   default='Sigmoid',  help='Sigmoid or Softmax')
+parser.add_argument('--num_sample',     type=int,   default=100)
 
 
 args = parser.parse_args()
@@ -69,7 +70,7 @@ def main(_):
         elif args.phase == 'test': #test by given an attributes
             model.test()
         elif args.phase == 'test_all': #test all testing data
-            model.test_all()
+            model.test_all(num_sample=args.num_sample)
         else:
             model.test_aux_accuracy() #test the accuracy of classifier
 

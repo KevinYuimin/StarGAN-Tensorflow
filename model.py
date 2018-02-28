@@ -211,14 +211,12 @@ class stargan(object):
         # load or not checkpoint
         if self.phase=='test' and self.checkpoint_load():
             print(" [*] before training, Load SUCCESS ")
-            # [5,6] with the seequnce of (realA, realB, fakeB), totally 10 set save
             
             self.attr_names, self.attr_list = attr_extract(self.data_dir)
             test_files = glob(os.path.join(self.data_dir, 'test', '*'))
             test_list = random.sample(test_files, 10)
             attr_list = [self.attr_list[os.path.basename(val)] for val in test_list]
             # get batch images and labels
-    #        self.attr_keys = ['Black_Hair','Blond_Hair','Brown_Hair', 'Male', 'Young','Mustache','Pale_Skin']
             real_atr = preprocess_attr(self.attr_names, attr_list, self.attr_keys) # Only reserve attrs that is listed in attr_keys.
             fake_atr = [float(i) for i in list(self.binary_attrs)] * len(test_list)
             fake_atr = np.array(fake_atr)
@@ -271,7 +269,7 @@ class stargan(object):
                 #test_file = os.path.join(self.test_dir, 'test2.jpg')
                 img_list = [org_img]
                 img_list = img_list+fake_img
-                save_images_test(img_list, self.image_size, test_file, num=1, col=self.n_label)
+                save_images_test(img_list, self.image_size, test_file, num=1, col=self.n_label+1)
 
         else:
             print(" [!] before training, no need to Load ")        
@@ -378,5 +376,5 @@ class stargan(object):
         
         # save samples
         sample_file = os.path.join(self.sample_dir, '%06d.jpg'%(step))
-        save_images(real_img, recon_img, fake_img, self.image_size, sample_file, num=num_sample)
+        save_images(real_img, fake_img, recon_img, self.image_size, sample_file, num=num_sample)
 

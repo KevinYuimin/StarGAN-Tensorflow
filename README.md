@@ -37,11 +37,26 @@ The default adversarial training method is improved WGAN. You could also try dif
 ```
 $ python main.py --phase=train --image_size=64 --batch_size=16 --adv_type=LSGAN
 ```
+The output format of the sample image during training:
+
+|                   | Orignial | Target | Reconstruct |
+|-------------------|----------|--------|-------------|
+| Target=Black Hair |          |        |             |
+| Target=Blond Hair |          |        |             |
+| Target=Brown Hair |          |        |             |
+| ...               |          |        |             |
+
 
 To test a model by given a specific attribute:
 ```
 $ python main.py --phase=test --image_size=64 --binary_attrs=100000
 ```
+The output format of the image is like:
+
+|     | Orignial | Target | Reconstruct |
+|-----|----------|--------|-------------|
+| img |          |        |             |
+
 Bianry attributes are now set up with the following sequence:
 ```
 'Black_Hair', 'Blond_Hair', 'Brown_Hair', 'Male', 'Young', 'Pale_Skin'
@@ -53,6 +68,7 @@ Sample 100 images from testing data and test each image with each attribute:
 $ python main.py --phase=test_all --image_size=64
 ```
 The output format of the image is like:
+
 |     | Orignial | Black Hair | Blond Hair | Brown Hair | Male | Young | Pale Skin |
 |-----|----------|------------|------------|------------|------|-------|-----------|
 | img |          |            |            |            |      |       |           |
