@@ -8,6 +8,7 @@ This code is mainly revised from goldkim92's [code](https://github.com/goldkim92
 * Modifying the code to be more consistent to the official implementation.
 * Fixing the bug in lost calculation.
 * More testing function added.
+* Adding Residual Block (base on [this code](https://github.com/xhujoy/CycleGAN-tensorflow/blob/master/module.py))
 
 
 

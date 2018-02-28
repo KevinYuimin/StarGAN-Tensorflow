@@ -1,3 +1,8 @@
+"""
+This code is modified from
+- https://github.com/goldkim92/StarGAN-tensorflow/blob/master/util.py
+"""
+
 import os
 from glob import glob
 from collections import namedtuple

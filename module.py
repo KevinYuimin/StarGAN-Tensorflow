@@ -1,3 +1,9 @@
+"""
+This code is modified from
+- https://github.com/goldkim92/StarGAN-tensorflow/blob/master/module.py
+- https://github.com/xhujoy/CycleGAN-tensorflow/blob/master/module.py
+"""
+
 import tensorflow as tf
 from ops import conv2d, deconv2d, relu, lrelu, instance_norm, tanh
 import numpy as np

@@ -1,3 +1,7 @@
+"""
+This code is from
+- https://github.com/goldkim92/StarGAN-tensorflow/blob/master/ops.py
+"""
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
 
