@@ -21,7 +21,7 @@ parser.add_argument('--batch_size',     type=int,   default=8)
 parser.add_argument('--image_size',     type=int,   default=128)
 parser.add_argument('--image_channel',  type=int,   default=3)
 parser.add_argument('--nf',             type=int,   default=64) # number of filters
-parser.add_argument('--n_label',        type=int,   default=7)
+parser.add_argument('--n_label',        type=int,   default=6)
 parser.add_argument('--lambda_gp',      type=int,   default=10)
 parser.add_argument('--lambda_cls',     type=int,   default=1)
 parser.add_argument('--lambda_rec',     type=int,   default=10)
@@ -31,7 +31,7 @@ parser.add_argument('--beta1',          type=float, default=0.5)
 parser.add_argument('--continue_train', type=bool,  default=False)
 parser.add_argument('--snapshot',       type=int,   default=500) # number of iterations to save files
 parser.add_argument('--adv_type',       type=str,   default='WGAN',     help='GAN or WGAN or LSGAN')
-parser.add_argument('--binary_attrs',   type=str,   default='0000000')
+parser.add_argument('--binary_attrs',   type=str,   default='100000')
 parser.add_argument('--d_steps',        type=int,   default=5)
 parser.add_argument('--c_method',       type=str,   default='Sigmoid',  help='Sigmoid or Softmax')
 

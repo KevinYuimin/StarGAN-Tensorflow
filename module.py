@@ -1,5 +1,5 @@
 import tensorflow as tf
-from ops import conv2d, deconv2d, relu, lrelu, instance_norm, tanh, entropy
+from ops import conv2d, deconv2d, relu, lrelu, instance_norm, tanh
 import numpy as np
 
 def generator(images, options, reuse=False, name='gen'):
