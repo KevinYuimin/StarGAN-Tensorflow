@@ -80,5 +80,6 @@ $ python main.py --phase=aux_test --image_size=64
 ```
 
 ## Result
+<p align="center"><img width="40%" src="img/example1.png" /></p>
 
 
